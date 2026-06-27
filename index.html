@@ -514,10 +514,10 @@ footer p{font-size:13px;color:var(--gray-400)}
   <div class="hero-grid"></div>
   <div class="hero-badge">
     <span class="badge-dot"></span>
-    Nuevo · Visión computacional para construcción
+    Nuevo · Presupuestos por voz y sin conexión
   </div>
   <h1>Presupuesta una obra<br/>en <em>menos de 15 minutos</em></h1>
-  <p class="hero-sub">Escanea con tu cámara, obtén las medidas exactas, calcula materiales y consulta precios actuales — sin papel ni calculadora.</p>
+  <p class="hero-sub">Dicta las necesidades de tu obra, extrae medidas y actividades mediante IA, y calcula materiales consultando catálogos geolocalizados — incluso sin internet en obra.</p>
   <div class="hero-actions">
     <a href="#precios" class="btn-primary">Empieza gratis →</a>
     <a href="#como" class="btn-secondary">Ver cómo funciona</a>
@@ -533,8 +533,8 @@ footer p{font-size:13px;color:var(--gray-400)}
       <div class="stat-l">con VisionPrice</div>
     </div>
     <div class="stat-item" style="border-left:1px solid var(--gray-200);padding-left:48px">
-      <div class="stat-n">±<span>5</span><span style="font-size:22px;vertical-align:middle">%</span></div>
-      <div class="stat-l">precisión en medidas</div>
+      <div class="stat-n"><span>100</span><span style="font-size:22px;vertical-align:middle">%</span></div>
+      <div class="stat-l">modo offline en obra</div>
     </div>
     <div class="stat-item" style="border-left:1px solid var(--gray-200);padding-left:48px">
       <div class="stat-n"><span>2</span><span style="font-size:22px;vertical-align:middle">+</span></div>
@@ -546,20 +546,20 @@ footer p{font-size:13px;color:var(--gray-400)}
 <!-- CÓMO FUNCIONA -->
 <section id="como" style="background:#fff">
   <div class="section-label">Cómo funciona</div>
-  <h2 class="section-title">Del escaneo al presupuesto en 5 pasos</h2>
-  <p class="section-sub">Sin curva de aprendizaje. Si puedes tomar una foto, puedes usar VisionPrice.</p>
+  <h2 class="section-title">De tu voz al presupuesto en 5 pasos</h2>
+  <p class="section-sub">Sin curva de aprendizaje. Si puedes hablar, puedes usar VisionPrice.</p>
   <div class="how-grid">
     <div class="how-card">
       <div class="how-num">01</div>
-      <div class="how-icon" style="background:#EEF2FF">📐</div>
-      <h3>Escanea la superficie</h3>
-      <p>Apunta la cámara y mueve lentamente el teléfono. ARCore detecta paredes, pisos y techos automáticamente.</p>
+      <div class="how-icon" style="background:#EEF2FF">🎙️</div>
+      <h3>Dicta tu obra offline</h3>
+      <p>Habla de forma natural describiendo el espacio, las medidas y los trabajos a realizar, incluso sin conexión a internet.</p>
     </div>
     <div class="how-card">
       <div class="how-num">02</div>
-      <div class="how-icon" style="background:#E8F7F1">🧊</div>
-      <h3>Revisa el modelo 3D</h3>
-      <p>Confirma las medidas en el visor 3D interactivo. Edita si es necesario o descuenta puertas y ventanas.</p>
+      <div class="how-icon" style="background:#E8F7F1">🧠</div>
+      <h3>Sincroniza y procesa con IA</h3>
+      <p>Al conectarte, la app envía los audios al servidor donde un LLM extrae las medidas, insumos y tareas automáticamente.</p>
     </div>
     <div class="how-card">
       <div class="how-num">03</div>
@@ -592,9 +592,9 @@ footer p{font-size:13px;color:var(--gray-400)}
       <div class="profile-icon">👷</div>
       <div class="profile-role">Maestro de obra</div>
       <h3>El que ejecuta</h3>
-      <p>Olvídate de la cinta y el papel. Escanea, consigue el número y dáselo al cliente ese mismo día. La app funciona con una mano bajo el sol.</p>
+      <p>Olvídate del papel y formatos complejos. Dicta la obra con tus propias palabras, consigue el número y dáselo al cliente ese mismo día. Ideal para obras sin conexión.</p>
       <div>
-        <span class="profile-feature">Escaneo rápido</span>
+        <span class="profile-feature">Dictado offline</span>
         <span class="profile-feature">Cálculo de materiales</span>
         <span class="profile-feature">PDF al cliente</span>
       </div>
@@ -618,7 +618,7 @@ footer p{font-size:13px;color:var(--gray-400)}
       <p>Especifica marca, calibre y acabado de cada material. El PDF profesional es parte del dossier que entregas a tu cliente.</p>
       <div>
         <span class="profile-feature">Especificaciones detalladas</span>
-        <span class="profile-feature">Visor 3D</span>
+        <span class="profile-feature">Extracción semántica</span>
         <span class="profile-feature">PDF con branding</span>
       </div>
     </div>
@@ -703,21 +703,21 @@ footer p{font-size:13px;color:var(--gray-400)}
       <div class="ia-subcard">
         <div class="ia-subcard-header">
           <span class="ia-number">2.1</span>
-          <h4>Recomendación inteligente de materiales a partir del escaneo 3D</h4>
+          <h4>Procesamiento de Voz e Inferencia Contextual (PLN)</h4>
         </div>
-        <p>Una vez que el usuario escanea el espacio con ARCore (Android) o ARKit (iOS) y el Vision Service reconstruye la geometría del lugar (superficies detectadas, dimensiones y tipo de espacio), un modelo de lenguaje (LLM) actúa como capa de recomendación que traduce esos datos técnicos en una propuesta de materiales contextualizada al tipo de obra, expresada en lenguaje natural y comprensible para cualquier perfil de usuario. El flujo de implementación es el siguiente:</p>
+        <p>Este módulo se encarga de traducir las pistas de voz en parámetros computables para el presupuesto, permitiendo a los usuarios dictar localmente sus necesidades. El flujo de implementación es el siguiente:</p>
         <ul class="ia-list">
           <li>
-            <strong>1. Construcción del prompt estructurado.</strong> El backend integra en un prompt la salida del escaneo 3D (metros cuadrados de muros, pisos y techos), el tipo de trabajo seleccionado (remodelación de cocina, construcción nueva o pintura de interiores/exteriores) y el catálogo de productos vigentes obtenido mediante la API de Mercado Libre.
+            <strong>1. Pipeline Voice-to-Text.</strong> Recibe los audios sincronizados y los procesa mediante modelos optimizados de reconocimiento de voz que transcriben las pistas a texto plano, filtrando interferencias acústicas de la obra.
           </li>
           <li>
-            <strong>2. Recomendación razonada de materiales.</strong> El LLM genera una propuesta que indica qué productos del catálogo se ajustan mejor al espacio escaneado, en qué cantidades —siempre validadas contra el Motor de Materiales— y por qué. Por ejemplo, sugerir pintura vinílica lavable para una cocina por la humedad del ambiente, o un azulejo de mayor resistencia al tránsito para los pisos.
+            <strong>2. Extracción de Entidades vía LLM Fine-Tuned.</strong> Las transcripciones ingresan a un modelo ajustado con un dataset de jerga e instrucciones arquitectónicas mexicanas ("tirar un firme", "revoque"). El modelo actúa como extractor de entidades nombradas (NER).
           </li>
           <li>
-            <strong>3. Interacción en lenguaje natural.</strong> El usuario puede expresar su necesidad escribiendo, por ejemplo, “quiero remodelar mi cocina de 3×4 con acabados económicos”. El sistema interpreta la intención, extrae los parámetros relevantes (tipo de trabajo, dimensiones, rango de presupuesto) y los mapea a las entidades del sistema sin que el usuario navegue por menús técnicos. Esta capacidad es clave para el perfil de maestro de obra, el usuario con menor experiencia tecnológica.
+            <strong>3. Generación de Contratos JSON.</strong> La IA mapea la intención semántica del usuario y emite como salida una estructura JSON limpia que contiene las dimensiones numéricas y actividades constructivas, lista para el Motor de Materiales.
           </li>
           <li>
-            <strong>4. Generación automática de textos del presupuesto.</strong> El LLM redacta las descripciones profesionales que acompañan al presupuesto exportado en PDF (alcance del trabajo, notas técnicas y supuestos), elevando la calidad de presentación de la propuesta sin esfuerzo adicional del usuario.
+            <strong>4. Emparejamiento por Geolocalización.</strong> El costo se calcula cruzando las necesidades extraídas con los catálogos limpios de las ferreterías locales más cercanas al usuario.
           </li>
         </ul>
       </div>
@@ -751,7 +751,7 @@ footer p{font-size:13px;color:var(--gray-400)}
       <div class="plan-desc">Perfecto para empezar y ver si VisionPrice funciona para tu flujo de trabajo.</div>
       <ul class="plan-features">
         <li><span class="check">✓</span>3 proyectos activos</li>
-        <li><span class="check">✓</span>Escaneo AR ilimitado</li>
+        <li><span class="check">✓</span>Dictado por voz ilimitado</li>
         <li><span class="check">✓</span>Cálculo de materiales</li>
         <li><span class="check">✓</span>Exportar PDF básico</li>
         <li><span class="check" style="color:var(--gray-300)">—</span><span style="color:var(--gray-400)">Analytics de precios</span></li>
@@ -768,7 +768,7 @@ footer p{font-size:13px;color:var(--gray-400)}
       <div class="plan-desc">Para maestros y contratistas que presupuestan varios trabajos a la semana y necesitan velocidad y comparativas.</div>
       <ul class="plan-features">
         <li><span class="check">✓</span>Proyectos ilimitados</li>
-        <li><span class="check">✓</span>Escaneo AR ilimitado</li>
+        <li><span class="check">✓</span>Dictado por voz ilimitado</li>
         <li><span class="check">✓</span>Comparativa 3 proveedores</li>
         <li><span class="check">✓</span>PDF con logo propio</li>
         <li><span class="check">✓</span>Enlace público 30 días</li>
@@ -827,16 +827,16 @@ footer p{font-size:13px;color:var(--gray-400)}
   </div>
   <div class="faq-list">
     <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">¿Necesito internet para escanear? <span class="faq-icon">+</span></div>
-      <div class="faq-a">El escaneo y el cálculo de materiales funcionan sin conexión. Solo necesitas internet para consultar precios en tiempo real de los proveedores. Si no tienes señal en obra, los precios de caché (últimas 24 h) se usan automáticamente.</div>
+      <div class="faq-q">¿Necesito internet para usar el dictado por voz? <span class="faq-icon">+</span></div>
+      <div class="faq-a">La grabación de descripciones por voz funciona completamente sin conexión. Los audios se guardan en tu dispositivo y se sincronizan automáticamente con el sistema cuando recuperas la conexión a internet.</div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">¿Qué tan precisas son las medidas? <span class="faq-icon">+</span></div>
-      <div class="faq-a">En condiciones normales de iluminación, la app logra un margen de error menor al 5% respecto a la cinta métrica en superficies rectangulares. Si el resultado no te convence, puedes corregir cualquier medida manualmente antes de calcular materiales.</div>
+      <div class="faq-q">¿El sistema entiende mi forma de hablar en obra? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Sí. Nuestro modelo de Inteligencia Artificial (LLM) ha sido ajustado específicamente para entender la jerga de la construcción en México (ej. "tirar un firme", "revoque de muros", "castillos"), extrayendo automáticamente las medidas y actividades correctas de tus audios.</div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q">¿Funciona en iPhone y Android? <span class="faq-icon">+</span></div>
-      <div class="faq-a">Sí. VisionPrice está disponible para Android (con ARCore, requiere Android 8.0+) e iOS (con ARKit, requiere iPhone 6s o superior con iOS 14+). Una sola cuenta funciona en ambos sistemas.</div>
+      <div class="faq-a">Sí. VisionPrice está desarrollado en Flutter, lo que nos permite ofrecer una experiencia nativa tanto para Android como para iOS, utilizando hardware convencional sin necesidad de sensores avanzados. Una sola cuenta funciona en ambos sistemas.</div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q">¿De dónde vienen los precios? <span class="faq-icon">+</span></div>
