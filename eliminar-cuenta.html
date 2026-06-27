@@ -32,6 +32,14 @@ textarea { resize: vertical; min-height: 100px; }
 .back-btn { display: inline-block; margin-bottom: 24px; text-decoration: none; color: var(--gray-600); font-weight: 600; font-size: 13px; }
 .back-btn:hover { color: var(--black); }
 .alert { background: #FEE2E2; color: #991B1B; padding: 12px 16px; border-radius: 8px; font-size: 13px; margin-bottom: 24px; display: flex; gap: 10px; align-items: flex-start; }
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
+.modal-content { background: #fff; padding: 32px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.1); animation: modalPop 0.3s ease; }
+.modal-icon { font-size: 40px; margin-bottom: 16px; }
+.modal-content h2 { font-size: 20px; font-family: 'DM Sans', sans-serif; margin-bottom: 8px; color: var(--black); }
+.modal-content p { font-size: 14px; color: var(--gray-600); margin-bottom: 24px; line-height: 1.5; }
+.btn-primary { background: var(--black); color: #fff; border: none; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s; width: 100%; }
+.btn-primary:hover { background: #333; }
+@keyframes modalPop { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body>
@@ -46,7 +54,7 @@ textarea { resize: vertical; min-height: 100px; }
   <span>Al procesar esta solicitud, se borrarán todos tus proyectos, presupuestos y audios sincronizados de forma irreversible.</span>
 </div>
 
-<form action="#" method="POST" onsubmit="event.preventDefault(); alert('Solicitud recibida correctamente. Nuestro equipo validará los datos y procederá con la eliminación de tu cuenta en las próximas 48 horas.');">
+<form id="deleteForm" action="#" method="POST" onsubmit="event.preventDefault(); showModal();">
   <div class="form-group">
     <label for="email">Correo electrónico de la cuenta *</label>
     <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
@@ -65,7 +73,26 @@ textarea { resize: vertical; min-height: 100px; }
 
   <button type="submit" class="btn-danger">Solicitar eliminación de cuenta</button>
 </form>
-
 </div>
+
+<div class="modal-overlay" id="successModal">
+  <div class="modal-content">
+    <div class="modal-icon">✅</div>
+    <h2>Solicitud Recibida</h2>
+    <p>Nuestro equipo validará los datos y procederá con la eliminación de tu cuenta en las próximas 48 horas.</p>
+    <button onclick="closeModal()" class="btn-primary">Entendido</button>
+  </div>
+</div>
+
+<script>
+function showModal() {
+  document.getElementById('successModal').style.display = 'flex';
+  document.getElementById('deleteForm').reset();
+}
+function closeModal() {
+  document.getElementById('successModal').style.display = 'none';
+}
+</script>
+
 </body>
 </html>
