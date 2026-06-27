@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Eliminar Cuenta - VisionPrice</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0F0F0E;
+  --white:#FFFFFF;
+  --gray-50:#F8F8F6;
+  --gray-100:#EFEFEC;
+  --gray-200:#DDDDD8;
+  --gray-400:#9B9B94;
+  --gray-600:#5C5C56;
+  --accent:#1B4FD8;
+  --red:#BE123C;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--gray-50);color:var(--black);line-height:1.6;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;}
+.container { width: 100%; max-width: 500px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,.05); }
+h1 { font-family: 'DM Serif Display', serif; color: var(--black); margin-bottom: 8px; font-size: 28px; letter-spacing: -0.5px;}
+p.sub { color: var(--gray-600); font-size: 14px; margin-bottom: 24px; }
+.form-group { margin-bottom: 20px; }
+label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--black); }
+input[type="text"], input[type="email"], input[type="tel"], textarea { width: 100%; padding: 12px 16px; border: 1.5px solid var(--gray-200); border-radius: 8px; font-size: 15px; font-family: inherit; transition: border-color 0.2s; background: var(--gray-50); }
+input:focus, textarea:focus { outline: none; border-color: var(--black); background: #fff; }
+textarea { resize: vertical; min-height: 100px; }
+.btn-danger { display: block; width: 100%; background: var(--red); color: #fff; border: none; padding: 14px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+.btn-danger:hover { background: #9F0F32; transform: translateY(-1px); }
+.back-btn { display: inline-block; margin-bottom: 24px; text-decoration: none; color: var(--gray-600); font-weight: 600; font-size: 13px; }
+.back-btn:hover { color: var(--black); }
+.alert { background: #FEE2E2; color: #991B1B; padding: 12px 16px; border-radius: 8px; font-size: 13px; margin-bottom: 24px; display: flex; gap: 10px; align-items: flex-start; }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="index.html" class="back-btn">← Volver al inicio</a>
+
+<h1>Eliminar cuenta</h1>
+<p class="sub">Completa este formulario para solicitar la eliminación permanente de tu cuenta y todos los datos asociados en VisionPrice.</p>
+
+<div class="alert">
+  <span style="font-size: 16px;">⚠️</span>
+  <span>Al procesar esta solicitud, se borrarán todos tus proyectos, presupuestos y audios sincronizados de forma irreversible.</span>
+</div>
+
+<form action="#" method="POST" onsubmit="event.preventDefault(); alert('Solicitud recibida correctamente. Nuestro equipo validará los datos y procederá con la eliminación de tu cuenta en las próximas 48 horas.');">
+  <div class="form-group">
+    <label for="email">Correo electrónico de la cuenta *</label>
+    <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Número de teléfono vinculado *</label>
+    <input type="tel" id="phone" name="phone" required placeholder="10 dígitos">
+    <p style="font-size: 11px; color: var(--gray-400); margin-top: 4px;">Usaremos este número exclusivamente para validar que la cuenta te pertenece.</p>
+  </div>
+
+  <div class="form-group">
+    <label for="reason">Motivo de eliminación</label>
+    <textarea id="reason" name="reason" placeholder="Cuéntanos brevemente por qué deseas eliminar tu cuenta..."></textarea>
+  </div>
+
+  <button type="submit" class="btn-danger">Solicitar eliminación de cuenta</button>
+</form>
+
+</div>
+</body>
+</html>
